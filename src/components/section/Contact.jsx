@@ -11,18 +11,27 @@ export const Contact = () => {
     });
 
     
-   const handleSubmit = (e) => {
-    e.preventDefault();
-    emailjs.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, e.target, import.meta.env.VITE_PUBLIC_KEY)
-    .then((result) => {
-        console.log('Success:', result);
-        alert("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-    }).catch((error) => {
-        console.error('EmailJS Error:', error);
-        alert("An error occurred: " + error.text);
-    });
+const handleSubmit = (e) => {
+  e.preventDefault();
+  const form = e.target;
+
+  emailjs.sendForm(
+    import.meta.env.VITE_SERVICE_ID,
+    import.meta.env.VITE_TEMPLATE_ID,
+    form,
+    import.meta.env.VITE_PUBLIC_KEY
+  )
+  .then((result) => {
+    console.log('Success:', result.text);
+    alert("Message sent successfully!");
+    setFormData({ name: "", email: "", message: "" });
+  })
+  .catch((error) => {
+    console.error('EmailJS Error:', error.text);
+    alert("An error occurred: " + error.text);
+  });
 };
+
     
     return (
     <section
