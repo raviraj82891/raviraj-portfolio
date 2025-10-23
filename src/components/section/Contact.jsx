@@ -10,16 +10,20 @@ export const Contact = () => {
         message: ""
     });
 
+const SERVICE_ID = "service_zb40vlj";
+const TEMPLATE_ID = "template_vbmn778";
+const PUBLIC_KEY = "J0FNJ92QIkRVXK3BV";
+
     
 const handleSubmit = (e) => {
   e.preventDefault();
   const form = e.target;
 
   emailjs.sendForm(
-    import.meta.env.VITE_SERVICE_ID,
-    import.meta.env.VITE_TEMPLATE_ID,
+    SERVICE_ID,
+    TEMPLATE_ID,
     form,
-    import.meta.env.VITE_PUBLIC_KEY
+    PUBLIC_KEY
   )
   .then((result) => {
     console.log('Success:', result.text);
