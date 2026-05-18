@@ -77,6 +77,9 @@ export const About = () => {
             <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
               <h3 className="text-xl font-bold mb-4">📜 Certifications</h3>
               <ul className="list-disc list-inside text-gray-300 space-y-2">
+                <li>Quick Heal Certified Digital Forensics Investigator | Quick Heal</li>
+                <li>IBM SkillsBuild Data Analytics Certificate | IBM</li>
+                <li>Web Design for Everybody: Basics of Web Development & Coding | Coursera</li>
                 <li>Artificial Intelligence Essentials | Coursera</li>
                 <li>CISCO Networking Certification | CISCO</li>
                 <li>Responsive Web Design Certification | FreeCodeCamp</li>
